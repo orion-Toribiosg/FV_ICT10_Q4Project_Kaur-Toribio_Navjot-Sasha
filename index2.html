@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Checker</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #0b0f1a;
+        margin: 0;
+        padding: 30px;
+        text-align: center;
+        color: #00ffcc;
+    }
+
+    h1 {
+        color: #ff00ff;
+        text-shadow: 0 0 10px #ff00ff;
+    }
+
+    label {
+        color: #00ffcc;
+    }
+
+    select, input {
+        padding: 8px;
+        margin: 10px;
+        border: 1px solid #00ffcc;
+        background: #111827;
+        color: #00ffcc;
+        border-radius: 6px;
+    }
+
+    button {
+        padding: 10px 18px;
+        background: #ff00ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 0 0 10px #ff00ff;
+    }
+
+    button:hover {
+        background: #00ffcc;
+        color: black;
+        box-shadow: 0 0 15px #00ffcc;
+    }
+
+    #output {
+        margin-top: 25px;
+        background: #111827;
+        padding: 20px;
+        border-radius: 12px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 20px #00ffcc33;
+    }
+.navbar{
+    background:rgba(10,10,25,0.8);
+    border:1px solid #00ffff55;
+    border-radius:15px;
+    padding:18px;
+    margin-bottom:40px;
+    box-shadow:0 0 20px #00ffff33;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.navbar a{
+    color:#00ffff;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    background:#ff00ff;
+    box-shadow:0 0 15px #ff00ff;
+}
+
+</style>
+    <py-config>
+        packages = ['numpy', 'matplotlib']
+    </py-config>
+</head>
+<body>
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Classmate System</a></li>
+        <li><a href="index2.html">Attendance Checker</a></li>
+        <li><a href="index3.html">SY 25-26 Pics</a></li>
+    </ul>
+</nav>
+    <h1> Attendance Checker </h1>
+    <label>Select a day:</label>
+    <select id="dayOfTheWeek">
+        <option value="Mon">Monday</option>
+        <option value="Tues">Tuesday</option>
+        <option value="Wed">Wednesday</option>
+        <option value="Thurs">Thursday</option>
+        <option value="Fri">Friday</option>
+    </select>
+    <label>Enter absences:</label>
+    <input type="number" id="absences" min="0">
+    <button py-click="display_graph"> Display Graph</button>
+
+    <div id="output2"></div>
+    <py-script src="main.py"></py-script>
+</body>
+</html>

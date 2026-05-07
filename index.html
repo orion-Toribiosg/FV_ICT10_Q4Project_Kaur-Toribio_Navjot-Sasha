@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW2</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Orbitron', sans-serif;
+    background:#050816;
+    background-image:
+    radial-gradient(circle at top left, rgba(0,255,255,0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,0,255,0.15), transparent 30%);
+    min-height:100vh;
+    text-align:center;
+    color:white;
+    padding:40px;
+}
+
+.navbar{
+    background:rgba(10,10,25,0.8);
+    border:1px solid #00ffff55;
+    box-shadow:0 0 20px #00ffff33;
+    border-radius:15px;
+    padding:18px;
+    margin-bottom:40px;
+    backdrop-filter:blur(10px);
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.navbar a{
+    color:#00ffff;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+.navbar a:hover{
+    background:#ff00ff;
+    color:white;
+    box-shadow:0 0 15px #ff00ff;
+}
+
+h1{
+    color:#00ffff;
+    font-size:38px;
+    text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+    margin-bottom:30px;
+}
+
+.card{
+    background:rgba(15,15,35,0.85);
+    border:1px solid #00ffff55;
+    box-shadow:0 0 25px rgba(0,255,255,0.25);
+    border-radius:20px;
+    width:550px;
+    margin:auto;
+    padding:35px;
+    backdrop-filter:blur(10px);
+}
+
+input{
+    width:90%;
+    padding:14px;
+    margin:10px 0;
+    border:2px solid #00ffff55;
+    border-radius:12px;
+    background:#0b1020;
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+}
+
+input::placeholder{
+    color:#9ca3af;
+}
+
+input:focus{
+    border-color:#ff00ff;
+    box-shadow:0 0 15px #ff00ff;
+    outline:none;
+}
+
+button{
+    width:44%;
+    padding:14px;
+    margin:15px 5px 0;
+    border:none;
+    border-radius:12px;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+    font-family:'Orbitron', sans-serif;
+}
+
+.add{
+    background:#00ffff;
+    color:black;
+    box-shadow:0 0 15px #00ffff;
+}
+
+.add:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:#00ccff;
+}
+
+.show{
+    background:#ff00ff;
+    color:white;
+    box-shadow:0 0 15px #ff00ff;
+}
+
+.show:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:#d400ff;
+}
+
+#output1{
+    background:rgba(15,15,35,0.85);
+    border:1px solid #ff00ff55;
+    box-shadow:0 0 20px rgba(255,0,255,0.2);
+    border-radius:18px;
+    width:70%;
+    margin:auto;
+    padding:25px;
+    color:#00ffff;
+    text-align:left;
+    line-height:1.8;
+}
+</style>
+<body>
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Classmate System</a></li>
+        <li><a href="index2.html">Attendance Checker</a></li>
+        <li><a href="index3.html">SY 25-26 Pics</a></li>
+    </ul>
+</nav>
+<h1> OB Montessori's Monarch Classmate System for Grade 10 </h1>
+<br> <br> 
+<div class="card">
+    <input type="text" id="name" placeholder="Enter CLASSMATE NAME"> <br> <br>
+    <input type="text" id="section" placeholder="Enter SECTION"> <br> <br>
+    <input type="text" id="favorite_subject" placeholder="Enter FAVORITE SUBJECT"> <br> <br> 
+
+<button class="add" py-click="add_classmate">Add Classmate</button>
+<button class="show" py-click="list_classmates">Show List</button>
+</div>
+<br> <br> <br> 
+<div id="output1"></div>
+<br> <br> 
+    <script type="py" src="main.py"> </script>
+    <py-config>
+    packages = ["numpy", "matplotlib"]
+    </py-config>  
+    <py-script src="main.py"></py-script>
+</body>
+</head>
+</html>
